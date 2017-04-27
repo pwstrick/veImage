@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="applicable-device" content="mobile">
+    <script>!function(e,t){function i(e){var t={},i=document.cookie.split(";");for(var a in i){var r=i[a].replace(/^\s*/,"");if(r){var n=r.split("=");t[n[0]]=n[1]||""}}return t[e]}function a(){var t=o.getBoundingClientRect().width;t/d>540&&(t=540*d);var i=t/10;o.style.fontSize=i+"px",c.rem=e.rem=i}var r,n=e.document,o=n.documentElement,l=n.querySelector('meta[name="viewport"]'),m=n.querySelector('meta[name="flexible"]'),d=0,s=0,c=t.flexible||(t.flexible={});if(l){console.warn("将根据已有的meta标签来设置缩放比例");var p=l.getAttribute("content").match(/initial\-scale=([\d\.]+)/);p&&(s=parseFloat(p[1]),d=parseInt(1/s))}else if(m){var u=m.getAttribute("content");if(u){var f=u.match(/initial\-dpr=([\d\.]+)/),v=u.match(/maximum\-dpr=([\d\.]+)/);f&&(d=parseFloat(f[1]),s=parseFloat((1/d).toFixed(2))),v&&(d=parseFloat(v[1]),s=parseFloat((1/d).toFixed(2)))}}if(!d&&!s){var h=(e.navigator.appVersion.match(/android/gi),e.navigator.appVersion.match(/iphone/gi)),w=e.devicePixelRatio;d=h?w>=3&&(!d||d>=3)?3:w>=2&&(!d||d>=2)?2:1:1,s=1/d}if(o.setAttribute("data-dpr",d),!l){l=n.createElement("meta"),l.setAttribute("name","viewport");var x="initial-scale="+s+", maximum-scale="+s+", minimum-scale="+s+", user-scalable=no",b=i("chelun_appName");if(b&&(x="width=device-width,"+x),l.setAttribute("content",x),o.firstElementChild)o.firstElementChild.appendChild(l);else{var g=n.createElement("div");g.appendChild(l),n.write(g.innerHTML)}}e.addEventListener("resize",function(){clearTimeout(r),r=setTimeout(a,300)},!1),e.addEventListener("pageshow",function(e){e.persisted&&(clearTimeout(r),r=setTimeout(a,300))},!1),"complete"===n.readyState||n.addEventListener("DOMContentLoaded",function(e){},!1),a(),c.dpr=e.dpr=d,c.refreshRem=a,c.rem2px=function(e){var t=parseFloat(e)*this.rem;return"string"==typeof e&&e.match(/rem$/)&&(t+="px"),t},c.px2rem=function(e){var t=parseFloat(e)/this.rem;return"string"==typeof e&&e.match(/px$/)&&(t+="rem"),t}}(window,window.lib||(window.lib={}));</script>
+    <link rel="stylesheet" href="css/style.css?__VERSION">
+    <!--meta(name="viewport",content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no")-->
+    <title>车库大战</title>
+  </head>
+  <body class="bac">
+    <section id="capture">
+      <div class="car-capture">
+        <canvas id="captureCanvas2" class="car-img car-canvas"></canvas>
+        <div class="car-mask"></div>
+      </div>
+      <footer class="ui-tc">
+        <h4 class="color-grey2 ui-mb40 ui-mt40">请将被捉车辆置入框内，点击捕捉</h4>
+        <button id="btnCapture" class="btn btn-circle"><img src="img/btn-capture-icon.png"></button>
+      </footer>
+    </section><img src="" id="carImg" style="width:100%;">
+  </body>
+  <script src="js/demo.bundle.js?__VERSION"></script>
+</html>
